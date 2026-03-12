@@ -1,0 +1,169 @@
+Arukay Challenge: Future Innovators
+Categoría Grupal — Única Etapa
+
+Sección 1 — Aspectos Generales del Proyecto
+Nombre del equipo: (por completar) Slogan del equipo: (por completar) Miembros del equipo: (por completar) Nombre del proyecto: Helio-Flow Ecosystem
+
+Sección 2 — Ficha Técnica del Proyecto
+2.1 Descripción del Problema
+Las instituciones educativas ubicadas en zonas rurales o campestres dependen habitualmente de servicios públicos externos para el suministro de electricidad y agua. Ante cortes de energía, las motobombas que abastecen los baños y las cocinas dejan de operar, comprometiendo directamente la higiene, la preparación de alimentos y el funcionamiento normal de la institución.
+Al mismo tiempo, gran parte de estas instituciones no aprovecha de manera sistemática los recursos naturales disponibles en su entorno —como la radiación solar y el agua lluvia— recursos que podrían reducir significativamente su dependencia de la infraestructura externa.
+Ante esta situación se desarrolla Helio-Flow Ecosystem: un sistema técnico que integra captación de energía solar con gestión activa de agua lluvia, orientado a garantizar la continuidad operativa de los servicios esenciales de la institución, incluso durante fallos en la red eléctrica.
+El sistema emplea paneles solares con seguimiento solar de tipo girasol, los cuales se orientan automáticamente hacia la dirección de mayor radiación disponible, incrementando la captación energética hasta en un 40% respecto a instalaciones con paneles fijos.
+
+2.2 Objetivo del Proyecto
+Diseñar un sistema automatizado que combine captación de energía solar, almacenamiento energético y aprovechamiento de agua lluvia, con el propósito de:
+	•	Mejorar la administración de recursos dentro de la institución.
+	•	Reducir la dependencia de servicios externos.
+	•	Garantizar la continuidad de las operaciones críticas ante eventos de falla en la red.
+A través del uso de sensores, controladores programables y estructuras móviles de orientación solar, el sistema busca optimizar el rendimiento energético y gestionar eficientemente los recursos hídricos disponibles, estableciendo una infraestructura que permita al colegio operar de forma autosuficiente durante períodos de crisis o interrupción del suministro externo.
+
+2.3 Áreas del Conocimiento
+Robótica Educativa
+Aplicada en el diseño y construcción del prototipo físico. Se utilizan componentes robóticos programables para simular el comportamiento del seguidor solar y los mecanismos de control del sistema.
+Energías Renovables
+Base conceptual del proyecto. Comprende el estudio de la energía fotovoltaica, el comportamiento de los paneles solares ante variaciones de temperatura e irradiación, y los principios de almacenamiento energético.
+Ingeniería y Tecnología
+Presente en dos frentes diferenciados:
+	•	Ingeniería eléctrica y electrónica: diseño del circuito de distribución energética, gestión de baterías y control de carga.
+	•	Ingeniería hidráulica: diseño del circuito de refrigeración líquida de los paneles y del sistema de captación, filtración y reutilización del agua lluvia.
+Programación
+El sistema de control se desarrolla en Python utilizando la librería ev3dev2, que permite interactuar con los sensores y motores del prototipo EV3 mediante código estructurado. Se implementan estructuras de control como bucles de monitoreo, condicionales de decisión, control de motores por grados y temporizadores de intervalo.
+Física Aplicada
+Se aplican principios de transferencia de energía solar, comportamiento térmico de celdas fotovoltaicas y dinámica de fluidos en el circuito de refrigeración líquida. La inclinación fija del panel se determina en función de la latitud geográfica de la institución.
+Gestión Sostenible del Agua
+El agua lluvia se integra como recurso activo dentro del sistema: se capta, filtra y dirige al circuito de refrigeración de los paneles; posteriormente, una vez utilizada en ese proceso, se redirige a los sistemas de descarga de los baños, cerrando un ciclo de reutilización que disminuye el consumo de agua potable de la red.
+
+2.4 Lenguaje de Programación
+El prototipo del sistema se desarrolla en Python utilizando la librería ev3dev2, que permite controlar directamente los sensores y motores del hardware LEGO Mindstorms EV3 mediante código estructurado. Este enfoque elimina la dependencia de entornos visuales y permite implementar lógica de control precisa y escalable.
+La librería provee interfaces para control de motores, lectura de sensores y gestión de temporizadores. El programa implementa las siguientes estructuras:
+	•	Bucles de monitoreo continuo: leen periódicamente la intensidad lumínica del sensor de luz para determinar la posición óptima del panel.
+	•	Estructuras condicionales (if / elif): evalúan la dirección de mayor irradiación y activan el movimiento del motor de rotación horizontal.
+	•	Control de motor por grados: desplazan la estructura giratoria con precisión angular según los datos del sensor.
+	•	Temporizadores de intervalo: regulan la frecuencia de muestreo y los tiempos de espera entre ciclos, evitando oscilaciones innecesarias.
+Este modelo de programación es directamente escalable a implementaciones reales sobre microcontroladores como Raspberry Pi, utilizando el mismo lenguaje y lógica de control.
+
+2.5 Justificación del Proyecto
+Helio-Flow Ecosystem opera bajo el principio de diseño Eco-First: los recursos disponibles en el entorno (sol y agua lluvia) se procesan y distribuyen internamente antes de recurrir a cualquier fuente externa.
+Funcionamiento General
+El ciclo de operación del sistema se desarrolla de la siguiente manera:
+	•	Los paneles solares, montados sobre una estructura giratoria, se orientan automáticamente hacia la dirección de mayor irradiación solar mediante un motor de rotación horizontal controlado por sensores de luz. La inclinación del panel es fija, determinada por la latitud de la institución.
+	•	La energía captada se almacena en un banco de baterías que actúa como reserva energética central del sistema.
+	•	El agua lluvia se capta en una superficie colectora, pasa por un sistema de filtración primaria y se dirige al circuito de refrigeración líquida de los paneles solares. Este proceso mantiene las celdas fotovoltaicas dentro de su rango de temperatura óptima, previniendo pérdidas de eficiencia por sobrecalentamiento.
+	•	Una vez que el agua ha cumplido su función de refrigeración, se redirige a los sistemas de descarga de los baños de la institución, completando un ciclo de reutilización hídrica.
+	•	La energía almacenada se distribuye de forma priorizada según el esquema de gestión de carga definido.
+Distribución y Gestión Energética
+La energía generada se administra mediante un esquema de distribución por prioridades:
+Nivel
+Asignación
+Descripción
+Reserva permanente
+20%
+Margen de seguridad ante eventualidades o períodos prolongados sin generación solar.
+Operación del sistema
+5%
+Mantiene en funcionamiento el circuito de refrigeración y el seguimiento solar.
+Prioridad 1
+Servicios vitales
+Motobombas de baños y cocina, y equipos críticos definidos por la institución.
+Prioridad 2
+Servicios secundarios
+Iluminación de pasillos, cargadores y otros consumos no esenciales.
+
+2.6 Objetivo de Desarrollo Sostenible
+El proyecto se enmarca en el ODS 7 — Energía asequible y no contaminante de las Naciones Unidas, que promueve el acceso universal a energía limpia, el incremento del uso de fuentes renovables y la mejora de la eficiencia energética a escala global.
+Helio-Flow Ecosystem contribuye a este objetivo al demostrar que una institución educativa puede reducir sustancialmente su dependencia de la red eléctrica externa mediante la integración de tecnologías de bajo costo y recursos naturales disponibles en su entorno inmediato.
+
+Sección 3 — Solución del Proyecto
+3.1 Descripción de la Solución
+Helio-Flow Ecosystem es un sistema cerrado de aprovechamiento de recursos naturales que integra:
+	•	Seguimiento solar automático mediante estructura giratoria con motor horizontal controlado por sensores de luz (tipo girasol), con incremento de captación de hasta 40% respecto a paneles fijos.
+	•	Almacenamiento energético centralizado en banco de baterías con distribución priorizada.
+	•	Ciclo de reutilización hídrica que capta agua lluvia, la filtra, la usa para refrigerar los paneles solares y luego la redirige a las descargas de los baños.
+El sistema garantiza la continuidad de los servicios críticos de la institución durante cortes de energía, operando de forma autosuficiente con recursos del entorno inmediato.
+
+3.2 Pasos para Resolver el Problema
+	•	Captación de energía solar mediante paneles con seguimiento automático de rotación horizontal.
+	•	Almacenamiento de la energía generada en el banco de baterías central.
+	•	Distribución energética priorizada: reserva (20%) → operación del sistema (5%) → servicios vitales → servicios secundarios.
+	•	Captación y filtración de agua lluvia desde la superficie colectora.
+	•	Circulación del agua filtrada por el circuito de refrigeración líquida de los paneles para mantener temperatura óptima.
+	•	Redirección del agua utilizada hacia los sistemas de descarga de los baños.
+	•	Redistribución del excedente energético hacia sistemas secundarios una vez garantizados los servicios críticos.
+
+3.3 Descripción de Elementos Técnicos
+Prototipo Educativo (LEGO Mindstorms EV3)
+	•	Controlador LEGO Mindstorms EV3 con librería ev3dev2 (Python)
+	•	Sensor de luz para detección de irradiación solar
+	•	Motor de rotación horizontal para seguimiento solar
+	•	Estructura giratoria con panel de inclinación fija
+	•	Simulación de circuito de refrigeración y captación hídrica
+
+Implementación Real — Componentes por Subsistema
+Seguimiento Solar
+Componente
+Referencia
+Función
+Microcontrolador
+Arduino UNO
+Unidad de control principal. Ejecuta la lógica de seguimiento y distribución energética.
+Sensores de luz
+2× LDR GL5528
+Uno a cada lado del panel separados por una barrera física. El Arduino compara ambos valores y rota hacia la mayor intensidad.
+Resistencias
+2× 10 kΩ
+Forman un divisor de voltaje con cada LDR para lectura analógica en pines A0 y A1.
+Motor de rotación
+Servo MG996R
+Rota el panel horizontalmente. Mayor torque que el SG90, apto para estructuras con peso real.
+Energía
+Componente
+Referencia
+Función
+Panel solar
+Monocristalino 6V
+Captación fotovoltaica. Capacidad según demanda calculada de la institución.
+Controlador de carga
+MPPT CN3791
+Maximiza la extracción de energía del panel y gestiona la carga de las baterías.
+Baterías
+18650 Li-Ion
+Almacenamiento energético. Se conectan en serie o paralelo según la capacidad requerida.
+Módulo de relés
+4 canales 5V
+Gestiona la distribución priorizada de energía entre los distintos circuitos del sistema.
+Fuente auxiliar
+5V 2A externa
+Los servos consumen más corriente de la que el Arduino puede proveer; requieren fuente independiente.
+Sistema Hídrico
+Componente
+Referencia
+Función
+Bomba de agua
+Submersible 5V
+Circula el agua por el circuito de refrigeración líquida de los paneles.
+Sensor de temperatura
+DS18B20
+Mide la temperatura del panel o del agua para activar o desactivar la bomba según necesidad.
+Manguera
+Silicona 6 mm
+Circuito de refrigeración líquida entre depósito y paneles.
+Depósito
+Recipiente sellado
+Almacena el agua lluvia filtrada antes de ingresar al circuito.
+Filtro
+Sedimentos 10 micras
+Filtración primaria del agua lluvia antes de entrar al circuito de refrigeración.
+Conexión y Monitoreo
+Componente
+Referencia
+Función
+Protoboard + jumpers
+Estándar
+Conexiones del prototipo sin soldadura.
+Pantalla
+LCD 16×2 con I2C
+Muestra en tiempo real: valores LDR, posición del servo, temperatura del panel y estado de batería.
+
+3.4 Link del Programa Desarrollado
+(por completar)
